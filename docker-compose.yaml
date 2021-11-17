@@ -1,0 +1,17 @@
+version: "3"
+services:
+    mysql:
+      image: mysql:5.6
+      environment:
+      - "MYSQL_ROOT_PASSWORD=dalong"
+      ports:
+      - "3306:3306"
+    ocenbase:
+      image: oceanbase/obce-mini
+      ports:
+      - "2881:2881"
+    dremio:
+      build: ./
+      ports:
+      - "9047:9047"
+      - "8849:8849"
